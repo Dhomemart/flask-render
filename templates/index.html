@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8"> <!-- 🔴 กำหนดให้รองรับภาษาไทย -->
+    <title>รายการสินค้า</title> <!-- 🔴 ชื่อหน้าเว็บ -->
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>📦 รายการสินค้า</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>รหัส</th>
+                <th>ชื่อสินค้า</th>
+                <th>ราคา</th>
+                <th>หน่วย</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in products %}
+            <tr>
+                <td>{{ p.PN }}</td>
+                <td>{{ p.Name }}</td>
+                <td>{{ "%.2f"|format(p.Price1) }}</td>
+                <td>{{ p.SUnit }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
