@@ -8,7 +8,6 @@ def get_connection():
         database="newstock",  # 🔴 ชื่อฐานข้อมูล MySQL ที่ sync ข้อมูลไว้
         charset="utf8mb4",    # 🔴 รองรับภาษาไทย
         cursorclass=pymysql.cursors.DictCursor  # 🔴 ให้ผลลัพธ์ออกมาเป็น dict (ใช้ key ได้)
-        Update db.py with public IP for Render connection
 
-        
+               
     )
