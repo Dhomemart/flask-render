@@ -12,8 +12,6 @@ def index():
     conn.close()  # 🔴 ปิด connection
     return render_template("index.html", products=products)  # 🔴 ส่งข้อมูลไปที่ template HTML
 
-if __name__ == "__main__":  # 🔴 ถ้ารันไฟล์นี้โดยตรง
-    app.run(host="0.0.0.0", port=5000, debug=True)  # 🔴 เปิด Web Server บนทุก IP (เข้าผ่าน LAN ได้)
 
 from flask import jsonify  # 🔴 นำเข้า jsonify สำหรับส่ง JSON
 
@@ -25,3 +23,7 @@ def api_products():
     products = cursor.fetchall()  # 🔴 เก็บผลลัพธ์ทั้งหมด
     conn.close()  # 🔴 ปิดการเชื่อมต่อ
     return jsonify(products)  # 🔴 ส่งออกเป็น JSON
+
+if __name__ == "__main__":  # 🔴 ถ้ารันไฟล์นี้โดยตรง
+    app.run(host="0.0.0.0", port=5000, debug=True)  # 🔴 เปิด Web Server บนทุก IP (เข้าผ่าน LAN ได้)
+
